@@ -303,7 +303,7 @@ hr:last-child, .hr:last-child { margin-bottom: 0; }
 
 .cap { text-transform: capitalize; }
 
-.section-pad { padding-top: 60px; padding-bottom: 60px; }
+.section-pad { padding-top: 120px; padding-bottom: 120px; }
 .section-pad-xs { padding-top: 20px; padding-bottom: 20px; }
 .section-pad-sm { padding-top: 60px; padding-bottom: 60px; }
 .section-pad-md { padding-top: 90px; padding-bottom: 90px; }
@@ -451,7 +451,7 @@ hr:last-child, .hr:last-child { margin-bottom: 0; }
 
 .no-shadow, .shadow-no { text-shadow: none !important; box-shadow: none !important; }
 
-@media screen and (min-width: 1600px) { .section-pad { padding-top: 60px; padding-bottom: 60px; }
+@media screen and (min-width: 1600px) { .section-pad { padding-top: 120px; padding-bottom: 120px; }
   .section-pad-xs { padding-top: 20px; padding-bottom: 20px; }
   .section-pad-sm { padding-top: 90px; padding-bottom: 90px; }
   .section-pad-md { padding-top: 120px; padding-bottom: 120px; }
