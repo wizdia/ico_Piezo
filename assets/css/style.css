@@ -93,13 +93,13 @@ h5, .h5 { font-size: 1.33em; }
 
 h6, .h6 { font-size: 1.07em; }
 
-p { font-size: 1em; }
+p { font-size: 1em; word-break:break-all;}
 
 h1.color-secondary, h2.color-secondary, h3.color-secondary, h4.color-secondary, h5.color-secondary, h6.color-secondary, .h1.color-secondary, .h2.color-secondary, .h3.color-secondary, .h4.color-secondary, .h5.color-secondary, .h6.color-secondary, p.color-secondary { color: #8255fd; }
 h1.color-primary, h2.color-primary, h3.color-primary, h4.color-primary, h5.color-primary, h6.color-primary, .h1.color-primary, .h2.color-primary, .h3.color-primary, .h4.color-primary, .h5.color-primary, .h6.color-primary, p.color-primary { color: #46bdf4; }
 h1.color-alt-primary, h2.color-alt-primary, h3.color-alt-primary, h4.color-alt-primary, h5.color-alt-primary, h6.color-alt-primary, .h1.color-alt-primary, .h2.color-alt-primary, .h3.color-alt-primary, .h4.color-alt-primary, .h5.color-alt-primary, .h6.color-alt-primary, p.color-alt-primary { color: #2b56f5; }
 
-p.lead { font-size: 1.27em; line-height: 1.68; text-align: justify; }
+p.lead { font-size: 1.27em; line-height: 1.68; word-break: break-all; }
 
 h1 span, h2 span, h3 span, h4 span, h5 span, h6 span, p span { color: #46bdf4; }
 
@@ -1021,8 +1021,8 @@ select:focus { outline: none; border: none; }
 .video-graph .play-btn-alt { position: absolute; top: 50%; left: 50%; margin-top: -10px; margin-right: -10px; transform: translate(-50%, -50%); }
 
 /* @v1.1.0 e */
-.theme-light .text-block p:not(.lead), .io-dark-light .section-light .text-block p:not(.lead), .io-dark-light .section-light-alt .text-block p:not(.lead) { color: #8284a5; text-align: justify; }
-.theme-light .text-block ul:not(.btns) li, .io-dark-light .section-light .text-block ul:not(.btns) li, .io-dark-light .section-light-alt .text-block ul:not(.btns) li { color: #8284a5; text-align: justify; }
+.theme-light .text-block p:not(.lead), .io-dark-light .section-light .text-block p:not(.lead), .io-dark-light .section-light-alt .text-block p:not(.lead) { color: #8284a5; word-break:break-all;}
+.theme-light .text-block ul:not(.btns) li, .io-dark-light .section-light .text-block ul:not(.btns) li, .io-dark-light .section-light-alt .text-block ul:not(.btns) li { color: #8284a5; word-break:break-all;}
 
 /* @v1.1.0 s */
 .features-box { margin-bottom: 40px; }
