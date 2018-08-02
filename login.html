@@ -30,19 +30,23 @@
                             </a>
                         </div>
                         <h5>Login</h5>
-                        <form action="#" class="login-form">
-                            <div class="input-item">
-                                <input type="text" placeholder="email" class="input-line-simple">
-                            </div>
-                            <div class="input-item">
-                                <input type="password" placeholder="password" class="input-line-simple">
-                            </div>
-                            <div class="gaps"></div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <button class="btn btn-sm">Login</button>
-                                <a href="#" class="simple-link">forgot password?</a>
-                            </div>
-                        </form>
+                        <div id="app">
+                            <form action="#" class="login-form">
+                                <div class="input-item">
+                                    <input type="text" placeholder="email" class="input-line-simple" v-model="id">
+                                </div>
+                                <div class="input-item">
+                                    <input type="password" placeholder="password" class="input-line-simple" v-model="password">
+                                </div>
+                                <div class="gaps"></div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button class="btn btn-sm" @click="login()">Login</button>
+                                    <a href="#" class="simple-link">forgot password?</a>
+                                </div>
+                            </form>
+                            <p>{{id}}</p>
+                            <p>{{password}}</p>
+                        </div>
                     </div>
                     <div class="gaps size-2x"></div>
                     <div class="form-note">
@@ -63,6 +67,27 @@
 	<!-- JavaScript (include all script here) -->
 	<script src="assets/js/jquery.bundle.js?ver=132"></script>
 	<script src="assets/js/script.js?ver=132"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                id: null,
+                password: null
+            },
+            methods: {
+                login: function () {
+                    console.log('login');
+                    axios.get('http://www.javabrain.kr:8080/api/heroes')
+                        .then(function(data){
+                            console.log(data);
+                        });
+                    return false;
+                }
+            }
+        })
+    </script>
 </body>
 </html>
