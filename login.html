@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx" class="js">
 <head>
-	<meta charset="euc-kr">
+	<meta charset="utf-8">
 	<meta name="author" content="Softnio">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="ICO Crypto is a modern and elegant landing page, created for ICO Agencies and digital crypto currency investment website.">
@@ -79,16 +79,16 @@
                 login: function (e) {
                     console.log('login');
                     if (this.email === null) {
-                        alert('ÀÌ¸ŞÀÏÀ» ÀÔ·ÂÇÏ¼¼¿ä');
+                        alert('ì´ë©”ì¼ì„ ì…ë ¥í•˜ì„¸ìš”');
                     }
                     if (this.name === null) {
-                        alert('ÆĞ½º¿öµå¸¦ ÀÔ·ÂÇÏ¼¼¿ä');
+                        alert('íŒ¨ìŠ¤ì›Œë“œë¥¼ ì…ë ¥í•˜ì„¸ìš”');
                     }
                     var params = {
                       email: this.email,
                       password: this.password
                     };
-                    axios.post('http://localhost:8081/api/login', params)
+                    axios.post('/api/login', params)
                         .then(function(body){
                             console.log(body);
                             if (body.data.result === 0) {
