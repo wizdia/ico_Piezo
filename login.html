@@ -33,7 +33,7 @@
                         <div id="app">
                             <form action="#" class="login-form">
                                 <div class="input-item">
-                                    <input type="text" placeholder="email" class="input-line-simple" v-model="id">
+                                    <input type="text" placeholder="email" class="input-line-simple" v-model="email">
                                 </div>
                                 <div class="input-item">
                                     <input type="password" placeholder="password" class="input-line-simple" v-model="password">
@@ -44,8 +44,6 @@
                                     <a href="#" class="simple-link">forgot password?</a>
                                 </div>
                             </form>
-                            <p>{{id}}</p>
-                            <p>{{password}}</p>
                         </div>
                     </div>
                     <div class="gaps size-2x"></div>
@@ -74,15 +72,31 @@
         var app = new Vue({
             el: '#app',
             data: {
-                id: null,
+                email: null,
                 password: null
             },
             methods: {
                 login: function () {
-                    console.log('login');
-                    axios.get('http://www.javabrain.kr:8080/api/heroes')
-                        .then(function(data){
-                            console.log(data);
+                    if (this.email === null) {
+                        alert('이메일을 입력하세요');
+                        return false;
+                    }
+                    if (this.name === null) {
+                        alert('패스워드를 입력하세요');
+                        return false;
+                    }
+                    var params = {
+                      email: this.email,
+                      password: this.password
+                    };
+                    axios.post('/api/login', params)
+                        .then(function(body){
+                            console.log(body);
+                            if (body.data.result === 0) {
+                              console.log('login success');
+                            } else {
+                              console.log('login fail');
+                            }
                         });
                     return false;
                 }
