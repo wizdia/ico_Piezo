@@ -72,17 +72,19 @@
         var app = new Vue({
             el: '#app',
             data: {
-                email: null,
-                password: null
+                email: '',
+                password: ''
             },
             methods: {
                 login: function (e) {
-                    console.log('login');
-                    if (this.email === null) {
+                    console.log('login', this.email, this.password);
+                    if (this.email === '') {
                         alert('이메일을 입력하세요');
+                        return;
                     }
-                    if (this.name === null) {
+                    if (this.password === '') {
                         alert('패스워드를 입력하세요');
+                        return;
                     }
                     var params = {
                       email: this.email,
@@ -97,6 +99,7 @@
                               location.href = '/admin/admin_index.html';
                             } else {
                               console.log('login fail');
+                              alert('입력한 정보가 일치하지 않습니다');
                             }
                         });
                 }

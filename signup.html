@@ -31,7 +31,7 @@
                         </div>
                         <h5>Join</h5>
                         <div id="app">
-                            <form action="#" class="login-form">
+                            <form @submit.prevent="signup" class="login-form">
                                 <div class="input-item">
                                     <input type="text" placeholder="name" class="input-line-simple" v-model="name">
                                 </div>
@@ -44,7 +44,7 @@
                                 <div class="input-item">
                                     <input type="password" placeholder="confirm password" class="input-line-simple" v-model="password2">
                                 </div>
-                                <div class="text-left" @click="signup()">
+                                <div class="text-left">
                                     <button class="btn btn-sm">Join</button>
                                 </div>
                             </form>
@@ -76,32 +76,32 @@
       var app = new Vue({
         el: '#app',
         data: {
-          name: null,
-          email: null,
-          password: null,
-          password2: null
+          name: '',
+          email: '',
+          password: '',
+          password2: ''
         },
         methods: {
           signup: function () {
-            if (this.name === null) {
+            if (this.name === '') {
               alert('이름을 입력하세요');
-              return false;
+              return;
             }
-            if (this.email === null) {
+            if (this.email === '') {
               alert('이메일을 입력하세요');
-              return false;
+              return;
             }
-            if (this.password === null) {
+            if (this.password === '') {
               alert('password 를 입력하세요');
-              return false;
+              return;
             }
-            if (this.password2 === null) {
+            if (this.password2 === '') {
               alert('confirm password 를 입력하세요');
-              return false;
+              return;
             }
             if (this.password !== this.password2) {
               alert('2개의 패스워드가 일치하지 않습니다.');
-              return false;
+              return;
             }
 
             var params = {
@@ -111,10 +111,13 @@
             };
 
             axios.post('/api/signup', params)
-              .then(function(data){
-                console.log(data);
+              .then(function(body){
+                  if (body.data.result === 0) {
+                      console.log('login success');
+                      localStorage.setItem('email', this.email);
+                      location.href = '/admin/admin_index.html';
+                  }
               });
-            return false;
           }
         }
       })
