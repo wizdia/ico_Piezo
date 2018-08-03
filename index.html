@@ -15,11 +15,6 @@
 	<!-- Custom styles for this template -->
 	<link rel="stylesheet" href="assets/css/style.css?ver=132">
 	<link rel="stylesheet" href="assets/css/theme.css?ver=132">
-	<script type="text/javascript">
-  $(window).resize(function(){resizeYoutube();});
-  $(function(){resizeYoutube();});
-  function resizeYoutube(){ $("iframe").each(function(){ if( /^https?:\/\/www.youtube.com\/embed\//g.test($(this).attr("src")) ){ $(this).css("width","100%"); $(this).css("height",Math.ceil( parseInt($(this).css("width")) * 360 / 480 ) + "px");} }); }
-</script>	
 </head>
 
 <body class="theme-light is-smooth-effect" data-spy="scroll" data-target="#mainnav" data-offset="80">
@@ -2314,7 +2309,7 @@
 					<ul class="contact-info">
 						<!--<li class="animated" data-animate="fadeInUp" data-delay="0"><em class="fa fa-phone"></em><span>010-7747-4424</span></li>-->
 						<li class="animated" data-animate="fadeInUp" data-delay=".1"><em class="fa fa-envelope"></em><a href="mailto:piezochain@gmail.com?subject=Piezo chain">piezochain@gmail.com</a></li>
-						<li class="animated" data-animate="fadeInUp" data-delay=".2"><em class="fa fa-paper-plane"></em><a href="https://t.me/piezochainkorea1" target="_blank">Telegram Group Chat</a></li>
+						<li class="animated" data-animate="fadeInUp" data-delay=".2"><em class="fa fa-paper-plane"></em><a href="https://t.me/piezochainoffice" target="_blank">Telegram Group Chat</a></li>
 						
 					</ul>
 				</div>
@@ -2380,6 +2375,22 @@
 	<!-- JavaScript (include all script here) -->
 	<script src="assets/js/jquery.bundle.js?ver=132"></script>
 	<script src="assets/js/script.js?ver=132"></script>
+	<script type="text/javascript">
+        $(window).resize(function () {
+            resizeYoutube();
+        });
+        $(function () {
+            resizeYoutube();
+        });
 
+        function resizeYoutube() {
+            $("iframe").each(function () {
+                if (/^https?:\/\/www.youtube.com\/embed\//g.test($(this).attr("src"))) {
+                    $(this).css("width", "100%");
+                    $(this).css("height", Math.ceil(parseInt($(this).css("width")) * 360 / 480) + "px");
+                }
+            });
+        }
+	</script>
 </body>
 </html>
