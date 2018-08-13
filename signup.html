@@ -84,23 +84,23 @@
         methods: {
           signup: function () {
             if (this.name === '') {
-              alert('이름을 입력하세요');
+              alert('Please, insert your name');
               return;
             }
             if (this.email === '') {
-              alert('이메일을 입력하세요');
+              alert('Please, insert your email address');
               return;
             }
             if (this.password === '') {
-              alert('password 를 입력하세요');
+              alert('Please, insert your password');
               return;
             }
             if (this.password2 === '') {
-              alert('confirm password 를 입력하세요');
+              alert('Please, insert the confirm password');
               return;
             }
             if (this.password !== this.password2) {
-              alert('2개의 패스워드가 일치하지 않습니다.');
+              alert('Password does not match the confirm password');
               return;
             }
 
